@@ -38,11 +38,11 @@ EMBEDDING_MODEL = "m3e-base"
 EMBEDDING_DEVICE = "auto"
 
 llm_model_dict = {
-    "chatglm-6b": {
-        "local_model_path": "THUDM/chatglm-6b",
-        "api_base_url": "http://192.168.49.5:8888/v1",  # "name"修改为fastchat服务中的"api_base_url"
-        "api_key": "EMPTY"
-    },
+    #"chatglm-6b": {
+    #    "local_model_path": "THUDM/chatglm-6b",
+    #    "api_base_url": "http://192.168.49.5:8888/v1",  # "name"修改为fastchat服务中的"api_base_url"
+    #    "api_key": "EMPTY"
+    #},
 
     "chatglm2-6b": {
         "local_model_path": "/usr/local/src/THUDM/chatglm2-6b",
@@ -50,11 +50,11 @@ llm_model_dict = {
         "api_key": "EMPTY"
     },
 
-    "chatglm2-6b-32k": {
-        "local_model_path": "THUDM/chatglm2-6b-32k",  # "THUDM/chatglm2-6b-32k",
-        "api_base_url": "http://192.168.49.5:8888/v1",  # "URL需要与运行fastchat服务端的server_config.FSCHAT_OPENAI_API一致
-        "api_key": "EMPTY"
-    },
+    #"chatglm2-6b-32k": {
+    #    "local_model_path": "THUDM/chatglm2-6b-32k",  # "THUDM/chatglm2-6b-32k",
+    #    "api_base_url": "http://192.168.49.5:8888/v1",  # "URL需要与运行fastchat服务端的server_config.FSCHAT_OPENAI_API一致
+    #    "api_key": "EMPTY"
+    #},
 
     # 调用chatgpt时如果报出： urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.openai.com', port=443):
     #  Max retries exceeded with url: /v1/chat/completions
@@ -71,21 +71,21 @@ llm_model_dict = {
     # 4.0 seconds as it raised APIConnectionError: Error communicating with OpenAI.
     # 需要添加代理访问(正常开的代理软件可能会拦截不上)需要设置配置openai_proxy 或者 使用环境遍历OPENAI_PROXY 进行设置
     # 比如: "openai_proxy": 'http://127.0.0.1:4780'
-    "gpt-3.5-turbo": {
-        "api_base_url": "https://api.openai.com/v1",
-        "api_key": os.environ.get("OPENAI_API_KEY"),
-        "openai_proxy": os.environ.get("OPENAI_PROXY")
-    },
+    #"gpt-3.5-turbo": {
+    #    "api_base_url": "https://api.openai.com/v1",
+    #    "api_key": os.environ.get("OPENAI_API_KEY"),
+    #    "openai_proxy": os.environ.get("OPENAI_PROXY")
+    #},
     # 线上模型。当前支持智谱AI。
     # 如果没有设置有效的local_model_path，则认为是在线模型API。
     # 请在server_config中为每个在线API设置不同的端口
     # 具体注册及api key获取请前往 http://open.bigmodel.cn
-    "chatglm-api": {
-        "api_base_url": "http://192.168.49.5:8888/v1",
-        "api_key": "6810e6ce87216c85bc9a7f9fe81b6a0d.HVIaixm11SeylqR1", #os.environ.get("ZHIPUAI_API_KEY"),
-        "provider": "ChatGLMWorker",
-        "version": "chatglm_pro",  # 可选包括 "chatglm_lite", "chatglm_std", "chatglm_pro"
-    },
+    #"chatglm-api": {
+    #    "api_base_url": "http://192.168.49.5:8888/v1",
+    #    "api_key": "6810e6ce87216c85bc9a7f9fe81b6a0d.HVIaixm11SeylqR1", #os.environ.get("ZHIPUAI_API_KEY"),
+    #    "provider": "ChatGLMWorker",
+    #    "version": "chatglm_pro",  # 可选包括 "chatglm_lite", "chatglm_std", "chatglm_pro"
+    #},
 }
 
 # LLM 名称
