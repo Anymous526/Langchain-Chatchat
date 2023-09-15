@@ -9,7 +9,7 @@ HTTPX_DEFAULT_TIMEOUT = 300.0
 OPEN_CROSS_DOMAIN = False
 
 # 各服务器默认绑定host
-DEFAULT_BIND_HOST = "0.0.0.0"
+DEFAULT_BIND_HOST = "127.0.0.1"
 
 # webui.py server
 WEBUI_SERVER = {
